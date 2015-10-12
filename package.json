@@ -18,6 +18,7 @@
   "homepage": "https://github.com/scottmacphersonmusic/gem_store#readme",
   "devDependencies": {
     "angular": "^1.4.7",
+    "bootstrap": "^3.3.5",
     "chai": "^3.3.0",
     "mocha": "^2.3.3"
   }
