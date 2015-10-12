@@ -12,8 +12,8 @@
   </ul>
 
   <!--  Description Tab's Content  -->
-  <div ng-show="tab.isSet(1)" ng-include="'product-description.html'">
-  </div>
+  <product-descriptions ng-show="tab.isSet(1)">
+  </product-descriptions>
 
   <!--  Spec Tab's Content  -->
   <div product-specs ng-show="tab.isSet(2)"></div>

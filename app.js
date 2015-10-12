@@ -1,6 +1,10 @@
 (function() {
   var app = angular.module('gemStore', []);
 
+  app.controller('StoreController', function() {
+    this.products = gems;
+  });
+
   app.directive("productGallery", function() {
     return {
       restrict: 'E',
@@ -15,8 +19,11 @@
     };
   });
 
-  app.controller('StoreController', function() {
-    this.products = gems;
+  app.directive("productDescriptions", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "product-description.html"
+    };
   });
 
   app.controller("ReviewController", function(){
@@ -24,16 +31,9 @@
     this.review = {};
 
     this.addReview = function(product){
+      this.review.createdOn = Date.now();
       product.reviews.push(this.review);
       this.review = {};
-    };
-
-  });
-
-  app.directive("productDescriptions", function() {
-    return {
-      restrict: 'E',
-      templateUrl: "product-description.html"
     };
   });
 
@@ -80,9 +80,9 @@
       color: '#CCC',
       faces: 14,
       images: [
-        "images/gem-02.gif",
-        "images/gem-05.gif",
-        "images/gem-09.gif"
+        "http://hijk.it/image/1i2z0R1g1z0Z/gem-02.gif",
+        "http://hijk.it/image/1y0p2h0y1Z2g/gem-05.gif",
+        "http://hijk.it/image/321Z3m391s02/gem-09.gif"
       ],
       reviews: [{
         stars: 5,
@@ -102,9 +102,9 @@
       color: '#EEE',
       faces: 12,
       images: [
-        "images/gem-01.gif",
-        "images/gem-03.gif",
-        "images/gem-04.gif"
+        "http://hijk.it/image/0t1y1l3T1226/gem-01.gif",
+        "http://hijk.it/image/2c3h3m0I3n1c/gem-03.gif",
+        "http://hijk.it/image/000Y2p0K2g1i/gem-04.gif"
       ],
       reviews: [{
         stars: 3,
@@ -124,9 +124,9 @@
         color: '#000',
         faces: 6,
         images: [
-          "images/gem-06.gif",
-          "images/gem-07.gif",
-          "images/gem-08.gif"
+          "http://hijk.it/image/3l2L0p0d1v1m/gem-06.gif",
+          "http://hijk.it/image/1228012u1w2V/gem-07.gif",
+          "http://hijk.it/image/3G2J0f231V2w/gem-08.gif"
         ],
         reviews: [{
           stars: 1,
